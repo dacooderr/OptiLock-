@@ -64,12 +64,12 @@ Major thanks to all of these individuals from the bottom of my heart. They are a
 - Dacooder:      Manager of dacooderr fork and creator of tutorial videos
 - Brullee:       Removed fake cvars, redundant commands, added cvarlist.md, and reformatted config
 - Kaizuchaneru:  While not directly invovled in the deveopment, they tested most cvars
-- Artemon121:    Made the Citadel cvar unhider, which helped Abdalla fetch cvars and test in-game
+- Artemon121:    Made the Citadel cvar unhider, which helped Abdalla fetch cvars and test in-game (You can find Artemon121's cvar unhider [here](https://github.com/Artemon121/cvar-unhide-s2-citadel))
 - Jaden:         Nice guy and helped both test and support various newcomers
 - Piggy:         Contributed the video.txt file
 - Tamara Mochaccina: Contributed vindicta scope fix and the fog fix
-- Maihdenless:   Started the original OptimisationLock & its Discord
-(You can find Artemon121's cvar unhider [here](https://github.com/Artemon121/cvar-unhide-s2-citadel))
+- Maihdenless:   Started the original OptiLock config & its Discord
+
 
 ----
 Please also consider checking out [this](https://github.com/Sqooky/Deadlock-Optimization-Resources) repository for optimization options external to the game.
