@@ -481,7 +481,7 @@
 
 // --- 1. Outlines ---
 citadel_trooper_glow_disabled               "1"             // 1 = Disable friendly/enemy minion glow.                          [def: "0"]
-citadel_damage_offscreen_indicator_disabled "false"         // The little trooper portraits that show up behind walls.          [def: "true"]
+citadel_damage_offscreen_indicator_disabled "true"         // The little trooper portraits that show up behind walls.          [def: "true"]
 citadel_boss_glow_disabled                  "1"             // Disables boss and walker glow/highlight effect.                  [def: "0]
 citadel_player_glow_disabled                "0"             // Disables player glow/highlight effect when pinged.               [def: "0"]
 r_citadel_npr_outlines_max_dist             "1"             // Limits outline distance to reduce unnecessary processing.        [def: "1000"]
