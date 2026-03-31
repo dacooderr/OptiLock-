@@ -13,6 +13,8 @@ To install the performance config replace the gameinfo.gi in ``steamapps/common/
 
 # Optional Optimizations
 
+[Windows and Linux Optimization Project](https://github.com/dacooderr/Windows-and-Linux-Optimization)
+
 Improve 1% lows: Using RTSS and locking your fps in-game to 3 fps under your refresh rate and turning on Vsync + Gsync (Or AMD Freesync/Intel Adaptive-Sync) can significantly improve your 1% lows.
 [Download](https://www.guru3d.com/download/rtss-rivatuner-statistics-server-download/)
 
@@ -83,7 +85,3 @@ Major thanks to all of these individuals from the bottom of my heart. They are a
 - Piggy:         Contributed the video.txt file
 - Tamara Mochaccina: Contributed vindicta scope fix and the fog fix
 - Maihdenless:   Started the original OptiLock config & its Discord
-
-
-----
-[Windows and Linux Optimization Project](https://github.com/dacooderr/Windows-and-Linux-Optimization)
