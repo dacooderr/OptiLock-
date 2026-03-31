@@ -465,10 +465,9 @@
 
     ConVars
     {    
-
 // ---------------------- GAMEINFO CONFIG OptiLock -- ver. 1  ------------------------ \\
-            // Check here for updates: https://gamebanana.com/mods/656341 \\
-           //Downloaded from: https://github.com/dacooderr/OptimizationLock\\
+            // Check here for updates: https://gamebanana.com/mods/664771 \\
+           //    Downloaded from: https://github.com/dacooderr/OptiLock    \\
           // In-Depth Tutorial: https://www.youtube.com/watch?v=ZKyJP3u-Y60 \\
 		 //	      	   Discord: https://discord.gg/vKT2myYC2R				 \\
 		 
@@ -752,6 +751,7 @@ sparseshadowtree_parallel_generation        "true"
   // Piggy              Let me mirror his config                                                               \\
  // Tamara Mochaccina   Made the vindicta scope mod and contributed the fog fix                                 \\
 // ----------------------------------------- END OF CONFIG OptiLock -- ver. 1 ---------------------------------- \\
+		"rate"
 
         "rate"
         {
