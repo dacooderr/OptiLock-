@@ -63,6 +63,7 @@ Every variation of the config included in this repository has mod support added.
 - [Better Map](https://gamebanana.com/mods/664456) by gfkm  |  Allows you to customize your minimap to your liking.
 - [Always Show Passive Items and Actives Icons](https://gamebanana.com/mods/601444) by Hanturaya  |  Always shows cooldowns on passives and actives.
 - [Mid/Bridge Buff/Neutrals Timer](https://gamebanana.com/mods/606414) by Hanturaya  |  Adds timers for Mid/Bridge/Camps without the need for Top Bar.
+- [See Friends Rank, Stats and See Account ID](https://gamebanana.com/mods/602711) by Hanturaya  |  See friends ranks and stats.
 - [Show stats in shop](https://gamebanana.com/mods/617072) by Goblin Man Sam  |  Shows your hero stats in the shop.
 - [Smart Cooldown Tracker](https://gamebanana.com/mods/654373) by iAfar  |  Adds tracking of your skill charges near the crosshair and a quick reminder over the crosshair when your skill is ready for use.
 - [Clean Damage Indicator](https://gamebanana.com/mods/655927) by lustie_  |  Makes the damage number indictor smaller and higher above the thing receiving damage.
