@@ -6,7 +6,7 @@ dacooderr: [Donate!](https://streamlabs.com/dacoder_/tip)
 Sqooky!: [Donate!](https://ko-fi.com/sqooky)
 
 # Base Instructions
-To install the performance config replace the gameinfo.gi in ``steamapps/common/deadlock/game/citadel`` with the one downloaded from this repository. Instructions for video.txt are in the video.txt file.
+To install the performance config replace the gameinfo.gi in ``steamapps/common/deadlock/game/citadel`` with the one downloaded from this repository. Instructions for video.txt are in the video.txt file. You *MUST* install both or else you will have a very weird looking game.
 **There is a video tutorial** for installation avaliable [here](www.youtube.com/watch?v=ZKyJP3u-Y60)
 
 # Optional Optimizations
