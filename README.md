@@ -84,4 +84,4 @@ Major thanks to all of these individuals from the bottom of my heart. They are a
 
 
 ----
-Please also consider checking out [this](https://github.com/dacooderr/Windows-and-Linux-Optimization) repository for optimization options external to the game.
+[Windows and Linux Optimization Project](https://github.com/dacooderr/Windows-and-Linux-Optimization)
