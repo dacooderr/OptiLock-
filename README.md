@@ -39,10 +39,11 @@ Valve has started restricting certain convars, as of late March. The config stil
 Here is a list of each config provided in this repository.
 | Config File                                                                                                                     | Purpose                                                                                                              |
 |---------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| [OptiLock default](https://github.com/dacooderr/OptiLock/blob/main/gameinfo.gi)                                    | Performance oriented config with the intent of competitive use.                                                    |
-| [kaizuchaneru's minimum spec](https://github.com/dacooderr/OptiLock/blob/main/kaizuchaneru's%20minimum%20spec/gameinfo.gi) | This config prioritizes fps above all else and dramatically reduces graphical quality. Recommended for bad computers |
-| [Piggy's gameinfo.gi](https://github.com/dacooderr/OptiLock/tree/main/piggy's%20config)                                    | Base optimizations but is here for if you want to use his config                                                     |
-| [cvarlist.md](https://github.com/dacooderr/OptiLock/blob/main/cvarlist.md)                                                 | Every single convar in the game's code. Not a proper config but instead a reference.                                 |
+| [OptiLock FPS Config](https://github.com/dacooderr/OptiLock/blob/main/gameinfo.gi)                                    | Performance oriented config with the intent of competitive use.                                                                |
+| [High-End PC Config](https://github.com/dacooderr/OptiLock/tree/main/High-End%20PCs)                                    | Performance oriented config with the intent of use on Higer-End PCs.                                                         |
+| [kaizuchaneru's minimum spec](https://github.com/dacooderr/OptiLock/blob/main/kaizuchaneru's%20minimum%20spec/gameinfo.gi) | This config prioritizes fps above all else and dramatically reduces graphical quality. Recommended for bad computers      |
+| [Piggy's gameinfo.gi](https://github.com/dacooderr/OptiLock/tree/main/piggy's%20config)                                    | Base optimizations but is here for if you want to use his config                                                          |
+| [cvarlist.md](https://github.com/dacooderr/OptiLock/blob/main/cvarlist.md)                                                 | Every single convar in the game's code. Not a proper config but instead a reference.                                      |
 
 
 # FAQ
