@@ -649,6 +649,7 @@ r_particle_multiplier                       "0"
 r_physics_particle_op_spawn_scale           "0"
 r_threaded_particles                        "0"
 cl_particle_fallback_base                   "1"
+r_particle_skip_postsim                     "true"          // Not entirely sure what it does, going off of the name I'd imagine it skips the post simulation, this is a testvar [def: "false"]
 
 // ================ Lod & Culling ================
 skeleton_instance_lod_optimization          "false"         // Compute LOD mask internally like since 2016, i.e. force all LOD groups' bones to compute [def: "false"]
