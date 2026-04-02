@@ -11,7 +11,7 @@ Sqooky!: [Donate!](https://ko-fi.com/sqooky)
 To install the performance config replace the gameinfo.gi with ours in ``steamapps/common/deadlock/game/citadel``.
 To change your video.txt follow the instructions in the provided video.txt file in this mod. Your video.txt file is located at ``steamapps/common/deadlock/game/citadel/cfg/video.txt``.
 You *MUST* install both or else you will have a very weird looking game.
-**There is a video tutorial** for installation avaliable [here](www.youtube.com/watch?v=ZKyJP3u-Y60).
+**There is a video tutorial** for installation avaliable [here](https://www.youtube.com/watch?v=XsycAaJlCRM).
 
 [*Your video.txt file should look like this, minus your resolution and refresh rate changes.*](https://ibb.co/NG5sZ9T) 
 
