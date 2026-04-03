@@ -1,11 +1,6 @@
 This modification is aimed at lowing the graphics settings as much as possible while keeping the <ins>competitive integrity</ins> for ranked play. It aims to update as *little as possible* and only when necessary. If you have any suggestions or concerns about this to help improve the config for this idea, please join the [OptiLock Discord](https://discord.gg/hkmmVHnVVT).
 
-To either request support or contribute findings to the project, our Discord Server can be found [here](https://discord.gg/hkmmVHnVVT).
-
-If you would like to donate as a means of showing us thanks: 
-
-dacooderr: [Donate!](https://streamlabs.com/dacoder_/tip) 
-Sqooky!: [Donate!](https://ko-fi.com/sqooky)
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 # Base Instructions
 To install the performance config replace the gameinfo.gi with ours in ``steamapps/common/deadlock/game/citadel``.
@@ -15,7 +10,7 @@ You *MUST* install both or else you will have a very weird looking game.
 
 [*Your video.txt file should look like this, minus your resolution and refresh rate changes.*](https://ibb.co/NG5sZ9T) 
 
-**YOU MUST MAKE VIDEO.TXT READONLY AFTERWARDS OR THE GAME MAY RESET IT. THIS WILL ALSO CAUSE ANY CHANGES SET IN GAME NOT TO STICK AFTER RESTART SO YOU WILL HAVE TO SET THE CORRESPONDING COMMAND MANUALLY IN THE FILE YOURSELF OR DISABLE READ ONLY TEMPORARILY.**
+**YOU MUST MAKE VIDEO.TXT READONLY AFTERWARDS OR THE GAME MAY RESET IT. THIS WILL ALSO CAUSE ANY CHANGES SET IN GAME NOT TO STICK AFTER RESTART SO YOU WILL HAVE TO SET THE CORRESPONDING COMMAND MANUALLY IN THE FILE YOURSELF.**
 
 **IF YOU RAISE YOUR setting.r_texture_stream_mip_bias past 4, YOU WILL HAVE TO INSTALL THE SINNER'S LIGHT FIX MOD. THIS IS INCLUDED IN THE ESSENTIAL ADDONS FOLDER.**
 
