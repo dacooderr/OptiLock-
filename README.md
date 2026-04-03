@@ -5,7 +5,6 @@ To either request support or contribute findings to the project, our Discord Ser
 If you would like to donate as a means of showing us thanks: 
 
 dacooderr: [Donate!](https://streamlabs.com/dacoder_/tip) 
-Sqooky!: [Donate!](https://ko-fi.com/sqooky)
 
 # Base Instructions
 To install the performance config replace the gameinfo.gi with ours in ``steamapps/common/deadlock/game/citadel``.
