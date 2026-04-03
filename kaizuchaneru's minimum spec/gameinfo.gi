@@ -13,9 +13,12 @@
 	}
 	nodegraph 0
 	perfwizard 0
-	tonemapping 0 
+	tonemapping 0
 	GameData	"citadel.fgd"
-	
+
+	DisallowGameInfoConditionals 1
+	PGIVersion "6E09D3ED5A47F6A97443813F0E00F90BAA435918F82DF0C9B5DA46D27A33D903"
+
 	Localize
 	{
 		DuplicateTokensAssert	1
@@ -66,9 +69,9 @@
 
 			// These are optional low-violence paths. They will only get mounted if you're in a low-violence mode.
 			Game_LowViolence	citadel_lv
-			Game                citadel/addons
-			Mod                 citadel
-          		Write               citadel          
+			Game                		citadel/addons
+			Mod                 		citadel
+          		Write               		citadel          
 			Game				citadel
 			Game				core
 		}
@@ -124,9 +127,9 @@
 		SwapChainSampleableDepth 1
 		VulkanMutableSwapchain 1
 		"LowLatency"								"1"
-		"VulkanOnly"								"1"	[ $LINUX || $OSX ] // No OpenGL or D3D9/11 fallback on Linux or OSX, only Vulkan is supported.
-		"VulkanRequireSubgroupWaveOpSupport"		"1"	[ !$OSX ]
-		"VulkanRequireDescriptorIndexing"			"1"	[ !$OSX ]
+		"VulkanOnly_Linux"							"1"
+		"VulkanRequireSubgroupWaveOpSupport"		"1"
+		"VulkanRequireDescriptorIndexing"			"1"
 		"VulkanSteamShaderCache" "1"
 		"VulkanSteamAppShaderCache" "1"
 		"VulkanSteamDownloadedShaderCache" "1"
@@ -470,7 +473,7 @@
 "mat_set_shader_quality" "0"
 
 // ================ FOV ================
-//"r_aspectratio" "2.15"              // [ADJUST] FOV control: 1.33=70fov | 1.56=75fov | 1.75=80fov | 2.0=85fov | 2.15=90fov | 2.49=100fov | 3.0=110fov | 3.5=120fov
+"r_aspectratio" "2.3"              // [ADJUST] FOV control: 1.33=70fov | 1.56=75fov | 1.75=80fov | 2.0=85fov | 2.15=90fov | 2.49=100fov | 3.0=110fov | 3.5=120fov
 
 // ================ LIGHTING & SHADOWS ================
 "r_directlighting" "false"
@@ -637,7 +640,7 @@
 "panorama_async_compute_mipgen" "1"
 "citadel_show_new_damage_feedback_numbers" "0" // Set 1 to enable
 "hud_free_cursor" "0"                // Reduces UI input delay in minimap/spectator modes (not sure if this is true)
-"citadel_camera_soft_collision" "0"
+"citadel_camera_soft_collision" "2"
 "citadel_camera_wobble_disable" "1"
 "citadel_unit_status_use_new" "0"
 "mm_idle_show_warning_at_s" "999"   // How many seconds to wait before showing the idle warning dialog
@@ -689,7 +692,7 @@
 "r_texturefilteringquality" "0"
 "r_max_portal_render_targets" "2"   // Set how many amount to render portals
 "mat_colcorrection_disableentities" "0" // Disable map color-correction entities
-r_citadel_disable_npr_lighting true
+"r_gbuffer_disable_npr_lighting" "true"
 "r_citadel_npr_outlines" "false"
 
 // test
@@ -740,7 +743,7 @@ r_citadel_disable_npr_lighting true
 "fx_drawmetalspark" "false" //Default: true<br>Draw metal spark effects.
 "r_mapextents" "4500" //Default: 16384<br>Set the max dimension for the map.  This determines the far clipping plane, set to higher number if no like popping building
 "r_citadel_npr_force_solid_outline" "true" //default false
-"r_dopixelvisibility" "true" //default true enables or disables pixel visibility calculations, which can affect performance and visibility checks within the game.
+//"r_dopixelvisibility" "false" //default true enables or disables pixel visibility calculations, which can affect performance and visibility checks within the game.
 "citadel_player_outline_enemies" "false" //turn off enemy outline DOES NOT BREAK BACKSTABBER OR PING THRU WALL
 "sc_screen_size_lod_scale_override" "0.001" //was -1
 "mat_colorcorrection" "0"
@@ -751,14 +754,14 @@ r_citadel_disable_npr_lighting true
 
 "citadel_hideout_enable_testing_tools" "true" //default false doesnt work
 
-"r_light_sensitivity_mode" "true"
+//"r_light_sensitivity_mode" "true"
 "sv_pvs_max_distance" "2800" //default 4000, unrender things(boxes, creeps, objs,etc) behind walls or out of viewing distance, does not affect player model.
 "sv_hide_ent_in_pvs" "1"
 "sv_remove_ent_from_pvs" "1" //default 0 remove entities from potential view something, basically culling objs outside of view
 
 "phys_cull_internal_mesh_contacts" "true" //default false
 "citadel_use_pvs_for_players" "true" //default false, culls players when out of view
-"r_particle_max_texture_layers" "3" //was -1
+//"r_particle_max_texture_layers" "3" //was -1
 
 "r_citadel_distancefield_down_sample" "6" //default 1
 
@@ -811,11 +814,10 @@ r_citadel_disable_npr_lighting true
 //"engine_allow_multiple_ticks_per_frame" "0" //remove
 "nav_pathfind_multithread" "1" //default false test 1 and 0, moves npc pathing to separate thread
 
-"cl_predict_after_every_createmove" "0" // test 1 0 
-"cl_predictioncopy_runs" "0" //put to 1 if character vibrates
+//"cl_predict_after_every_createmove" "0" // test 1 0 
+//"cl_predictioncopy_runs" "0" //put to 1 if character vibrates
 "r_particle_batch_collections" "1"
 
-"r_texture_stream_mip_bias" "3"
 "r_texture_stream_resolution_bias" "0.01"
 //"lb_enable_envmaps" "0" //REMOVE THIS DO NOT CHANGE THIS VALUE CUZ EVERYTHING IS GONNA BE BLACK
 "lb_enable_baked_shadows" "1"
@@ -850,7 +852,6 @@ r_citadel_disable_npr_lighting true
 "r_drawdecals" "false" //defaul true
 "minimap_update_rate_hz" "30"
 "ai_think_interval" "0.3"
-citadel_npc_force_animate_every_tick        "false"
 
 "ai_async_queue_max_jobs" "8"
 "ai_think_interval_lod_med" "0.4"
@@ -870,6 +871,11 @@ citadel_npc_force_animate_every_tick        "false"
 
 "r_particle_model_per_thread_count" "48"
 "r_limit_particle_job_duration" "1"
+
+//"r_citadel_selection_outline2_offset" "2"
+//"r_citadel_selection_outline2_alpha" "255"
+//"r_citadel_selection_outline2_width" "10"
+
 
  
 		"rate"
@@ -941,7 +947,7 @@ citadel_npc_force_animate_every_tick        "false"
 		"cl_async_usercmd_send_disabled_recvmargin_min" "0.5"	// Additional frame since we do not use the async usercmd send (potentially unneccessary)
 		"cl_clock_buffer_ticks"	"1"
 		"cl_interp_ratio" "0"
-		"cl_async_usercmd_send" "true"
+		"cl_async_usercmd_send" "false"
 
 		"fps_max"		"400"
 		"fps_max_ui"	"120"
