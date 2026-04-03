@@ -11,13 +11,15 @@ Sqooky!: [Donate!](https://ko-fi.com/sqooky)
 To install the performance config replace the gameinfo.gi with ours in ``steamapps/common/deadlock/game/citadel``.
 To change your video.txt follow the instructions in the provided video.txt file in this mod. Your video.txt file is located at ``steamapps/common/deadlock/game/citadel/cfg/video.txt``.
 You *MUST* install both or else you will have a very weird looking game.
-**There is a video tutorial** for installation avaliable [here](www.youtube.com/watch?v=ZKyJP3u-Y60).
+**There is a video tutorial** for installation avaliable [here](https://www.youtube.com/watch?v=XsycAaJlCRM).
 
 [*Your video.txt file should look like this, minus your resolution and refresh rate changes.*](https://ibb.co/NG5sZ9T) 
 
 **YOU MUST MAKE VIDEO.TXT READONLY AFTERWARDS OR THE GAME MAY RESET IT. THIS WILL ALSO CAUSE ANY CHANGES SET IN GAME NOT TO STICK AFTER RESTART SO YOU WILL HAVE TO SET THE CORRESPONDING COMMAND MANUALLY IN THE FILE YOURSELF OR DISABLE READ ONLY TEMPORARILY.**
 
 **IF YOU RAISE YOUR setting.r_texture_stream_mip_bias past 4, YOU WILL HAVE TO INSTALL THE SINNER'S LIGHT FIX MOD. THIS IS INCLUDED IN THE ESSENTIAL ADDONS FOLDER.**
+
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 # Optional Optimizations
 
@@ -32,6 +34,8 @@ Using this in conjunction with everything can further improve 1% lows by giving 
 
 You can find a tutorial on how to utilize Process Lasso [here](https://www.youtube.com/watch?v=xXpnCqXxwz8).
 
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
 # Pretty Important Announcement
 Valve has started restricting certain convars, as of late March. The config still works for now and Valve is aware of this config and is aware of the need for this. So only time will tell.
 
@@ -45,6 +49,7 @@ Here is a list of each config provided in this repository.
 | [Piggy's gameinfo.gi](https://github.com/dacooderr/OptiLock/tree/main/piggy's%20config)                                    | Base optimizations but is here for if you want to use his config                                                          |
 | [cvarlist.md](https://github.com/dacooderr/OptiLock/blob/main/cvarlist.md)                                                 | Every single convar in the game's code. Not a proper config but instead a reference.                                      |
 
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 # FAQ
 - "How do I find a value in the config"  
@@ -67,6 +72,8 @@ The gameinfo.gi gets overwritten every major update. You need to manually replac
 - "I can't see trooper healthbars and boxes past a certain distance"  
 ``r_size_cull_threshold "0.7"``  comment this out.  
 
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
 # Mod Support
 Every variation of the config included in this repository has mod support added.
 
@@ -83,10 +90,11 @@ Every variation of the config included in this repository has mod support added.
 - [Daylock](https://gamebanana.com/mods/614857) by BreadRollius  |  Adds a bright starry skybox for visibility. Only install the pak file.
 - ['Fullbright' Mod](https://gamebanana.com/mods/664234) by Sadie Sinks Husband  |  A mod that removed all shading on textures and gives that "fullbright" look.
 
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
 # Credits
 Major thanks to all of these individuals from the bottom of my heart. They are all lovely.
-- Sqooky:        Original manager of the Github
-- dacooder:      Manager of dacooderr fork and creator of tutorial videos
+- dacooder:      Manager of the Git and creator of tutorial videos
 - Brullee:       Removed fake cvars, redundant commands, added cvarlist.md, and reformatted config
 - Kaizuchaneru:  While not directly invovled in the deveopment, they tested most cvars
 - Artemon121:    Made the Citadel cvar unhider, which helped Abdalla fetch cvars and test in-game (You can find Artemon121's cvar unhider [here](https://github.com/Artemon121/cvar-unhide-s2-citadel))
@@ -94,4 +102,3 @@ Major thanks to all of these individuals from the bottom of my heart. They are a
 - pidjan:        Allowed config integration
 - Piggy:         Contributed the video.txt file
 - Tamara Mochaccina: Contributed vindicta scope fix and the fog fix
-- Maihdenless:   Started the original OptiLock config & its Discord
