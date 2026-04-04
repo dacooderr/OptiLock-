@@ -94,6 +94,7 @@ ________________________________________________________________________________
 Major thanks to all of these individuals from the bottom of my heart. They are all lovely.
 - dacooder:      Config Creator
 - Artemon121:    Made the Citadel cvar unhider
+- simcasting: 	 Benchmarking
 - pidjan:        Gameinfo contribution
 - Piggy:         Contributed the video.txt file
 - Tamara Mochaccina:       Contributed vindicta scope fix and the fog fix

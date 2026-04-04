@@ -484,9 +484,9 @@
            //Downloaded from: https://github.com/dacooderr/OptimizationLock\\
           // In-Depth Tutorial: https://www.youtube.com/watch?v=ZKyJP3u-Y60 \\
 		 //	      	   Discord: https://discord.gg/vKT2myYC2R				 \\
-	    //
-	   //       If you would like to donate as a means of showing thanks      \\
-	  //               https://streamlabs.com/dacoder_/tip                     \\
+	    //																	  \\
+	   //       If you would like to donate as a means of showing thanks       \\
+	  //               https://streamlabs.com/dacoder_/tip                      \\
 
 
 // Press ctrl+f and type * to highlight the more visually impactful commands that you could adjust
@@ -761,9 +761,9 @@ sparseshadowtree_parallel_generation        "true"
 
          //CREDITS																				        \\
         // dacooder     OptiLock Creator            													 \\
-       // Brullee       Removed fake cvars, redundant commands, added cvarlist.md, and reformatted config \\
-	  // Xeraa			Helped fix a major issue with console spam and fps drops late game				   \\
-     // Kaizuchaneru    Kaiz config             														    \\
+	   // Xeraa			Helped fix a major issue with console spam and fps drops late game				  \\
+      // Kaizuchaneru   Kaiz config             														   \\
+	 // simcasting 	    Benchmarking																		\\
     // Artemon121       Made the Citadel cvar unhider														 \\
    // Pidjan            Worked on further gameinfo changes and let us integrate                               \\
   // Piggy              Video.txt contributer and cool streamer guy                                            \\
