@@ -507,45 +507,15 @@ r_citadel_outlines							"1" 			// Enables enemy outlines for better visibility.
 r_aspectratio                             	"2.15"          // 1.75=80fov | 2.15=90fov | 2.49=100fov (every .15 interval = 5 fov).      [def: "0"]
 citadel_camera_hero_fov                     "100"           // The field of view angle of the camera when following a hero.     [def: "90"]
 
-// --- 3. HUD ---
-citadel_hud_objective_health_enabled        "2"             // 0=Off, 1=Shrines, 2=T1/T2, 3=Barracks.                           [def: "2"]
-citadel_damage_report_enable                "1"             // Enables/Disables incoming/outgoing damage tab. [def: "1"]
+// --- 3. Crosshair/Hud ---
 citadel_hideout_ball_show_juggle_count      "1"             // Shows a fun juggle count minigame for hideout ball.              [def: "0"]
 citadel_hideout_ball_show_juggle_fx         "1"             // Shows juggle visual FX for hideout ball minigame.                [def: "0"]
-citadel_crosshair_hit_marker_duration       "0.00001"        // Removes the hitmarker when shooting people.                  [def: "0.1"]
+citadel_crosshair_hit_marker_duration       "0.0001"        // Removes the hitmarker when shooting people.                  [def: "0.1"]
 
 // --- 4. Lighting & Shadows ---
 lb_enable_stationary_lights                 "0"             // *Disables stationary lights (map looks flatter but more performant).         [def: "1"]
 lb_enable_dynamic_lights                    "0"             // *Disables dynamic lights eg. walker, shop, tp, character abilities etc. (hero silhouettes go dark in menus as a side effect) [def: "1"]
 lb_enable_baked_shadows                     "1"             // *Disables baked shadows (game looks bright if this is on while stationary lights = 1). [def: "1"]
-
-// --- 5. Skybox Rendering ---
-r_draw3dskybox                              "0"             //  Enables drawing the 3D skybox layer (distant geometry).         [def: "1"]
-
-// --- 6. FPS Caps & Minimized Throttling ---
-fps_max                                     "0"             // Max FPS while in game, limit fps to your monitor refresh rate. [def: "400"]
-engine_no_focus_sleep                       "20"            // Milliseconds the engine sleeps per frame when unfocused (0 = no sleep, not recommended for low-end PC). [def: "20"]
-engine_low_latency_sleep_after_client_tick  "true"          // Sleeps strategically after client tick to reduce latency/stutter (low-latency pacing). [def: "false"]
-
-// --- 7. Object Culling ---
-r_size_cull_threshold                       "0.7"           // *Culls small objects sooner based on screen size threshold (higher = more culling). [def: "0.8"]
-
-// --- 8. Camera Tweaks ---
-r_citadel_clip_sphere_min_opacity           "0"             // Removes the blur from the pinhole camera                         [def: "40"]
-
-// ================= UI ================
-r_citadel_enable_pano_world_blur            "false"
-r_dashboard_render_quality                  "0"             // Sets dashboard/UI render quality (lower = cheaper UI rendering). [def: "1"]
-citadel_damage_text_show_effectiveness      "0"             // Shows extra “effectiveness” info in damage text (e.g., resist/weakness style feedback). [def: "0"]
-panorama_disable_box_shadow                 "1"             // Disables UI box shadows in the UI (less GPU/UI cost).            [def: "0"]
-panorama_disable_blur                       "1"             // Disables UI blur effects in the UI.                              [def: "0"]
-panorama_allow_transitions                  "false"         // Turns off UI anim (shop,etc)                                     [def: "1"]
-citadel_minimap_use_canvas_for_neutrals     "0"             // Uses an alternate “canvas” rendering path for neutral icons on the minimap (render path toggle). [def: "1"]
-citadel_minimap_use_canvas_for_shop         "0"             // Uses an alternate “canvas” rendering path for shop icons on the minimap (render path toggle). [def: "1"]
-panorama_use_new_occlusion_invalidation     "1"
-panorama_temp_comp_layer_min_dimension      "128"
-
-// ================ SHADOWS ================
 r_shadows                                   "0"             // Disables dynamic shadows.                                        [def: "1"]
 r_citadel_shadow_quality                    "0"             // Deadlock/Citadel shadow quality level (0 = lowest).              [def: "2"]
 r_citadel_gpu_culling_shadows               "1"             // Enables GPU-driven culling for shadow casters (performance).     [def: "0"]
@@ -565,16 +535,13 @@ cl_globallight_shadow_mode                  "0"
 lb_csm_draw_alpha_tested                    "0"             // Prevents alpha-tested geometry from being included in CSM passes (cheaper, possible missing leaf/fence shadows). [def: "1"]
 lb_csm_draw_translucent                     "0"             // Prevents translucent objects from rendering into CSM (cheaper, fewer shadow details). [def: "1"]
 lb_enable_shadow_casting                    "0"             // Disables baked shadows I believe                                 [def: "1"]
-lb_ssss_samples                             "1"             // Subsurface sample count                                          [def: "11"]
-
-// ================ LIGHTING ================
 r_directlighting                            "false"         // Set to true to have your characters not be black in the shop     [def:"true"]
 mat_async_shader_load                       "1"            
 r_rendersun                                 "0"             // Disables sun lighting.                                           [def: "1"]
 r_citadel_sun_shadow_slope_scale_depth_bias "1.0"                                                                  
 cl_retire_low_priority_lights               "1"             // Replaces/drops low-priority dynamic lights when higher-priority lights are present (helps cap dlight clutter/cost). [def: "0"]
 r_multiscattering                           "1"             // Enables multi-scattering lighting approximation.                 [def: "1"]
-r_light_flickering_enabled                  "1"             // Enables light flicker effects where used.                        [def: "1"]
+r_light_flickering_enabled                  "0"             // Enables light flicker effects where used.                        [def: "1"]
 r_lightmap_size                             "4"             // Maximum lightmap resolution..                                    [def: "65536"]
 r_lightmap_size_directional_irradiance      "4"             // Sets directional irradiance lightmap data size (lower = less detail) (-1 = uses value of r_lightmap_size ). [def: "-1"]
 r_lightmap_bicubic_filtering                "1"             // Enables bicubic filtering on lightmaps.                          [def: "1"]
@@ -587,23 +554,42 @@ r_distancefield_enable                      "0"             // Disables/ Enables
 r_citadel_distancefield_farfield_enable     "0"             // Disables long-range distance field effects.                      [def: "1"]
 r_citadel_disable_npr_lighting 				"false"
 
+// --- 5. Skybox Rendering ---
+r_draw3dskybox                              "0"             //  Enables drawing the 3D skybox layer (distant geometry).         [def: "1"]
+
+// --- 6. FPS Caps & Minimized Throttling ---
+fps_max                                     "0"             // Max FPS while in game, limit fps to your monitor refresh rate. [def: "400"]
+engine_low_latency_sleep_after_client_tick  "true"          // Sleeps strategically after client tick to reduce latency/stutter (low-latency pacing). [def: "false"]
+
+// --- 7. Object Culling ---
+r_size_cull_threshold                       "0.7"           // *Culls small objects sooner based on screen size threshold (higher = more culling). [def: "0.8"]
+
+// --- 8. Camera Tweaks ---
+r_citadel_clip_sphere_min_opacity           "0"             // Removes the blur from the pinhole camera                         [def: "40"]
+
+// ================= UI ================
+r_citadel_enable_pano_world_blur            "false"
+r_dashboard_render_quality                  "0"             // Sets dashboard/UI render quality (lower = cheaper UI rendering). [def: "1"]
+panorama_disable_box_shadow                 "1"             // Disables UI box shadows in the UI (less GPU/UI cost).            [def: "0"]
+panorama_disable_blur                       "1"             // Disables UI blur effects in the UI.                              [def: "0"]
+panorama_allow_transitions                  "false"         // Turns off UI anim (shop,etc)                                     [def: "1"]
+panorama_use_new_occlusion_invalidation     "1"
+panorama_temp_comp_layer_min_dimension      "128"
+
 // ================ RAGDOLLS ================
 cl_ragdoll_limit 							"1"				// Limits number of ragdolls active at once.
 ragdoll_parallel_pose_control               "1"             // Multithreaded ragdoll handling, better performance (if ragdolls aren't disabled). [def: "0"]
 
 // ================ MODELS ================
 enable_boneflex                             "0"             // Disables bone flexes (procedural facial/mesh flex drivers).      [def: "1"]
-r_drawmodeldecals							"0"
 r_hair_ao                                   "0"             // Disables hair ambient occlusion/shading pass.                    [def: "1"]
-cl_fasttempentcollision                     "1"          // Limits/controls fast collision processing for temporary entities (impacts/tracers/etc.); higher usually = more work. [def: "5"]
+cl_fasttempentcollision                     "1"             // Limits/controls fast collision processing for temporary entities (impacts/tracers/etc.); higher usually = more work. [def: "5"]
 ik_final_fixup_enable                       "0"             // Disables final IK fixup pass (cheaper animations, potentially less accurate). [def: "1"]
 ik_fabrik_align_chain                       "0"             // Disables FABRIK chain alignment in IK (cheaper).                 [def: "1"]
 animgraph_enable_parallel_preupdate         "1"             // Allows animgraph pre-update work to run in parallel (performance). [def: "0"]
 animgraph_enable_parallel_op_evaluation     "1"             // Allows animgraph operator evaluation to run in parallel (performance). [def: "0"]
 cloth_sim_on_tick                           "0"             // Update the cloth simulation every tick                           [def: "1"]
 phys_threaded_cloth_bone_update             "1"             // Make the cloth update threaded                                   [def: "0"]
-phys_threaded_kinematic_bone_update         "1"             //                                                                  [def: "0"]
-phys_threaded_transform_update              "1"             //                                                                  [def: "0"]
 props_break_max_pieces_perframe             "1"             // Makes boxes break into a single pieces                           [def: "16"]
 
 // ================ VISUAL CLARITY ================
@@ -617,7 +603,7 @@ r_effects_bloom                             "0"             // Disables effects 
 r_post_bloom                                "0"             // Disables post-process bloom.                                     [def: "1"]
 cl_show_splashes                            "0"             // Disables splash effects (water/impact splashes).                 [def: "1"]
 sc_clutter_enable                           "false"         // Disables clutter props, improves visibility & FPS.               [def: "true"]
-volume_fog_intermediate_textures_hdr      "0"
+volume_fog_intermediate_textures_hdr        "false"
 r_drawtracers 								"1"
 r_drawtracers_firstperson 					"1"
 
@@ -626,14 +612,12 @@ cl_input_enable_raw_keyboard                "1"             // Enables raw keybo
 
 // ================ PARTICLES ================
 cl_particle_max_count                       "0"             // If console is flooded with max particles exceeded warnings.      [def: "0"]
-r_drawparticles								"1"
-r_particle_max_size_cull                    "999"           // Particle systems larger than this in every dimension skip culling to save CPU.  They will be drawn anyway [def: "1200"]
+r_drawparticles								"false"
+r_particle_max_size_cull                    "200"           // Particle systems larger than this in every dimension skip culling to save CPU.  They will be drawn anyway [def: "1200"]
 r_particle_max_detail_level                 "1"             // The maximum detail level of particle to create.                  [def: "3"]
 particle_cluster_nodraw                     "1"             // Skips drawing particle “clusters”/grouped particle batches (performance, fewer small effects). [def: "0"]
 r_physics_particle_op_spawn_scale           "0"             // Prevents physics-based particle spawns.                          [def: "1"]
-r_particle_model_new8                       "0"         	// Not entirely sure what this does                                 [def: "true"]
-r_particle_model_new                        "true"          // Use new particles I'd imagine? not sure though.                  [def: "false"]
-r_RainParticleDensity                       "0"             // Density of Particle Rain 0-1.                                    [def: "1"]                            [def: "40"]
+r_RainParticleDensity                       "0"             // Density of Particle Rain 0-1.                                    [def: "1"]                          
 cl_particle_fallback_base                   "10"            // Base for falling back to cheaper effects under load.             [def: "0"] 
 cl_particle_fallback_multiplier             "20"            // Multiplier for falling back to cheaper effects under load.       [def: "0"]
 cl_particle_sim_fallback_base_multiplier    "40"            // How aggressive the switch to fallbacks will be depending on how far over the cl_particle_sim_fallback_threshold_ms the sim time is.  Higher numbers are more aggressive. [def: "5"] 
@@ -641,10 +625,12 @@ cl_particle_sim_fallback_threshold_ms       "0.001"         // Amount of simulat
 r_particle_skip_postsim                     "true"          // Not entirely sure what it does, going off of the name I'd imagine it skips the post simulation, this is a testvar [def: "false"]
 r_particle_timescale                        "1.1"           // Speeds up particle simulation, thus making them end sooner, however this causes visual desyncs, most notably with big effects that last a while such as infernus ult. Please tweak this to what you are comfortable with. [def: "1"]
 cl_particle_batch_mode                      "1"             // Has a range of 1 or 2, 2 will make celeste's auto rebound look weird and 0 will make them not batch [def: "1"]
-r_draw_particle_children_with_parents       "0"             // 
-r_late_particle_job_sync                    "true"          // 
-r_particle_batch_collections                "true"          // 
+r_draw_particle_children_with_parents       "0"             
 r_particle_max_texture_layers               "4"             // Anything below 4 will make infernus afterburn, paige fire, and drifter's passive look very weird and blocky [def: "-1"]
+r_particle_cables_cast_shadows				"false"
+r_particle_cables_culling					"1"
+r_particle_cables_render					"false"
+
 
 // ================ Lod & Culling ================
 cl_enable_eye_occlusion                     "true"          // Enables lowering of quality of anything out of sight 			[def: "true"]
@@ -661,13 +647,11 @@ sc_layer_batch_threshold_fullsort           "20"            //                  
 sv_remove_ent_from_pvs                      "1"             // Culls objects (creeps, boxes, objects) outside of view           [def: "0"]
 r_farz                                      "18000"          // Override the far clipping plane                                  [def: "-1"]
 r_mapextents                                "10000"
-phys_cull_internal_mesh_contacts            "true"          //                                                                  [def: "false"]
 citadel_use_pvs_for_players                 "true"          // Default culls players when out of view                           [def: "false"]
 sv_waterdist								"0"
 
 // ================ Misc ================
 r_low_latency                               "1"             // Depends on if your hardware supports it I believe                [def: "1"]
-r_max_portal_render_targets                 "2"             // Maxium number of Doorman doors to allow rendering.               [def: "0"]
 
 // ================ Grass ================
 r_grass_quality                             "0"             // Quality of the grass                                             [def: "2"]
