@@ -508,12 +508,11 @@ r_aspectratio                             	"2.15"          // 1.75=80fov | 2.15=
 citadel_camera_hero_fov                     "100"           // The field of view angle of the camera when following a hero.     [def: "90"]
 
 // --- 3. HUD ---
-citadel_unit_status_use_new                 "0"             // This uses new Health Bar, to use old Health Bar change "true" to "false".    [def: "0"]
 citadel_hud_objective_health_enabled        "2"             // 0=Off, 1=Shrines, 2=T1/T2, 3=Barracks.                           [def: "2"]
 citadel_damage_report_enable                "1"             // Enables/Disables incoming/outgoing damage tab. [def: "1"]
 citadel_hideout_ball_show_juggle_count      "1"             // Shows a fun juggle count minigame for hideout ball.              [def: "0"]
 citadel_hideout_ball_show_juggle_fx         "1"             // Shows juggle visual FX for hideout ball minigame.                [def: "0"]
-citadel_crosshair_hit_marker_duration       "0.0001"       // Removes the hitmarker when shooting people.                  [def: "0.1"]
+citadel_crosshair_hit_marker_duration       "0.00001"        // Removes the hitmarker when shooting people.                  [def: "0.1"]
 
 // --- 4. Lighting & Shadows ---
 lb_enable_stationary_lights                 "0"             // *Disables stationary lights (map looks flatter but more performant).         [def: "1"]
@@ -584,7 +583,7 @@ r_ssao_strength                             "0"             // AO strength multi
 r_citadel_ssao_quality                      "0"             // SSAO quality level (0 = lowest/off-ish).                         [def: "3"]
 r_citadel_ssao_thin_occluder_compensation   "0"             // Disables special handling for thin occluders in SSAO (cheaper).  [def: "0.5"]
 mat_set_shader_quality                      "0"             // Force shader quality setting (valid values are 0 or 1).          [def: null]
-r_distancefield_enable                      "1"             // Disables/ Enables distance-field system (used by some lighting/shadowing/occlusion features). [def: "1"]
+r_distancefield_enable                      "0"             // Disables/ Enables distance-field system (used by some lighting/shadowing/occlusion features). [def: "1"]
 r_citadel_distancefield_farfield_enable     "0"             // Disables long-range distance field effects.                      [def: "1"]
 r_citadel_disable_npr_lighting 				"false"
 
@@ -596,7 +595,7 @@ ragdoll_parallel_pose_control               "1"             // Multithreaded rag
 enable_boneflex                             "0"             // Disables bone flexes (procedural facial/mesh flex drivers).      [def: "1"]
 r_drawmodeldecals							"0"
 r_hair_ao                                   "0"             // Disables hair ambient occlusion/shading pass.                    [def: "1"]
-cl_fasttempentcollision                     "1000"          // Limits/controls fast collision processing for temporary entities (impacts/tracers/etc.); higher usually = more work. [def: "5"]
+cl_fasttempentcollision                     "1"          // Limits/controls fast collision processing for temporary entities (impacts/tracers/etc.); higher usually = more work. [def: "5"]
 ik_final_fixup_enable                       "0"             // Disables final IK fixup pass (cheaper animations, potentially less accurate). [def: "1"]
 ik_fabrik_align_chain                       "0"             // Disables FABRIK chain alignment in IK (cheaper).                 [def: "1"]
 animgraph_enable_parallel_preupdate         "1"             // Allows animgraph pre-update work to run in parallel (performance). [def: "0"]
@@ -618,15 +617,9 @@ r_effects_bloom                             "0"             // Disables effects 
 r_post_bloom                                "0"             // Disables post-process bloom.                                     [def: "1"]
 cl_show_splashes                            "0"             // Disables splash effects (water/impact splashes).                 [def: "1"]
 sc_clutter_enable                           "false"         // Disables clutter props, improves visibility & FPS.               [def: "true"]
-volume_fog_intermediate_textures_hdr      	"0"
+volume_fog_intermediate_textures_hdr      "0"
 r_drawtracers 								"1"
 r_drawtracers_firstperson 					"1"
-
-// ================ SYSTEM RELATED ================
-gpu_level                                   "1"             // GPU level.                                                       [def: "3"]
-gpu_mem_level                               "1"             // GPU Memory level.                                                [def: "2"]
-cpu_level                                   "1"             // CPU level.                                                       [def: "2"]
-battery_saver                               "0"             // Disables battery saver mode (no automatic throttling).       	[def: "0"]
 
 // ================ INPUT ================
 cl_input_enable_raw_keyboard                "1"             // Enables raw keyboard input handling (more direct input path).[def: "0"]
@@ -640,8 +633,7 @@ particle_cluster_nodraw                     "1"             // Skips drawing par
 r_physics_particle_op_spawn_scale           "0"             // Prevents physics-based particle spawns.                          [def: "1"]
 r_particle_model_new8                       "0"         	// Not entirely sure what this does                                 [def: "true"]
 r_particle_model_new                        "true"          // Use new particles I'd imagine? not sure though.                  [def: "false"]
-r_RainParticleDensity                       "0"             // Density of Particle Rain 0-1.                                    [def: "1"]
-r_world_wind_strength                       "0"             // Disables wind effects, cosmetic only.                            [def: "40"]
+r_RainParticleDensity                       "0"             // Density of Particle Rain 0-1.                                    [def: "1"]                            [def: "40"]
 cl_particle_fallback_base                   "10"            // Base for falling back to cheaper effects under load.             [def: "0"] 
 cl_particle_fallback_multiplier             "20"            // Multiplier for falling back to cheaper effects under load.       [def: "0"]
 cl_particle_sim_fallback_base_multiplier    "40"            // How aggressive the switch to fallbacks will be depending on how far over the cl_particle_sim_fallback_threshold_ms the sim time is.  Higher numbers are more aggressive. [def: "5"] 
@@ -679,84 +671,16 @@ r_max_portal_render_targets                 "2"             // Maxium number of 
 
 // ================ Grass ================
 r_grass_quality                             "0"             // Quality of the grass                                             [def: "2"]
-r_grass_start_fade                          "0"             // When to cull grass when it's close I think                       [def: "0"]
-r_grass_end_fade                            "0"             // When to cull grass when far                                      [def: "300"]
-
-// ================ Creep AI ================
-cl_simulate_dormant_entities                "false"
-ai_strong_optimizations_no_checkstand       "1"             // Not fully sure what exactly this does, but I would imagine given the name of the convar it optimizes ai. [def: "0"]
-citadel_npc_force_animate_every_tick        "false"         // Don't change this, it does what it says on the tin.              [def: "true"]
-
-// ================ Audio ================
-snd_ui_positional                           "false"         // Disables positional audio to save cpu                            [def: "true"]
-snd_occlusion_bounces                       "0"             // Limits occlusion to save cpu                                     [def: "1"]
-snd_occlusion_rays                          "0"             //                                                                  [def: "4"]
-audio_enable_vmix_mastering                 "false"         //                                                                  [def: "true"]
-snd_steamaudio_num_threads                  "4"             // Audio thread count                                               [def: "4"]
-snd_mixahead                                "0.05"          // Adds some latency that shouldn't be percivable to save cpu       [def: "0.001"]
-snd_soundmixer_version                      "1"             // [def: "2"]
-
-// ================ Test Group 5 ================
-csm_cascade0_override_dist "0"
-csm_cascade1_override_dist "0"
-csm_cascade2_override_dist "0"
-csm_cascade3_override_dist "0"
-csm_max_dist_between_caster_and_receiver "0"
-csm_max_num_cascades_override "0"
-csm_max_shadow_dist_override  "0"
-csm_max_visible_dist "0"
-csm_res_override_0 "1"
-csm_res_override_1 "1"
-csm_res_override_2 "1"
-csm_res_override_3 "1"
-csm_viewmodel_shadows "false" 
-r_citadel_depth_prepass_dynamic_objects     "false"
-citadel_unit_status_allies_see_thru_walls_max_distance "40"
-citadel_unit_status_old_update_rate         "15"
-snd_steamaudio_reverb_order_rendering       "0"
+r_grass_start_fade                          "0"                        
+r_grass_end_fade                            "0"                                             
 
 // ================ Test Group 4 ================
 r_texturefilteringquality                   "0"             // Texture filtering, has very low fps impact. 0: Bilinear, 1: Trilinear, 2: Aniso 2x, 3: Aniso 4x, 4: Aniso 8x, 5: Aniso 16x
-r_texture_budget_threshold                  "0.7"           // Reduce texture memory pool size when this percentage of the budget is full. [def: "0.8"]
 r_renderdoc_auto_shader_pdbs                "false"         // Automatically generate shader debug info on capture. [def: "true"]
 r_texture_budget_update_period				"0.5"
 r_particle_parallel_simulation				"1"
 r_particle_batch_simulate					"1"
 threadpool_thread_limit						"0"
-
-// ================ Test group 3 ================
-enable_priority_boost                       "true"
-engine_max_ticks_to_simulate                "2"             // Max number of ticks to simulate per frame, after which simulation will start to slow down compared to real time. [Def: "-1"]
-engine_allow_multiple_simulates_per_frame   "false"         // Simulate more ticks when your fps is low, could be good?     [def: "false"]
-cq_enable                                   "true"          // Custom queuing (I belive) being enabled. Network jank I am testing, setting this to false can cause issues. [def: "true"]
-cl_phys_assume_fixed_tick_interval          "false"         // Assume the client uses a fixed tickrate like the server (which may not always be true)actual [def: "true"]
-citadel_arrow_brightness                    "1"
-cl_interp_parallel                          "true"          // 
-cl_modifier_parallel_gather_status_effect_updates   "true"  // 
-parallel_perform_invalidate_physics         "true"          // 
-
-// ================ Test group 2 ================
-citadel_camera_soft_collision_angle         "360"
-cl_batch_entity_list_ops_during_latch       "true"
-citadel_damage_text_batching_window_ability "1000"
-sc_force_materials_batchable                "true"
-
-// ================ Test group 1 ================ 
-r_particle_allowprerender                   "false"
-citadel_outer_radius_scaler                 "0.25"          //
-iv_parallel_restore                         "false"         //
-r_decals_default_fade_duration              "1"             //
-r_texture_budget_update_period              "0.5"           //
-save_parallel                               "true"          
-r_particle_model_per_thread_count           "48"          
-r_limit_particle_job_duration               "true"        
-ai_async_queue_max_jobs                     "1"
-ai_gather_conditions_async                  "true"
-ai_use_async_ragdoll_fixup                  "true"
-mat_async_shader_load                       "true"
-nav_obstruction_async_update                "true"
-r_async_compute_fog                         "true"
-sparseshadowtree_parallel_generation        "true"
 
 
          //CREDITS																				        \\
