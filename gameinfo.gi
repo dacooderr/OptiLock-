@@ -259,7 +259,7 @@
         // steps. Additionally this controls which builders are displayed in the hammer build dialog.
         DefaultMapBuilders
         {
-            "bakedlighting" "1" // Enable lightmapping during compile time      
+            "bakedlighting" "0" // Enable lightmapping during compile time      
             "envmap"    "0" // turned off since it currently causes an assert and doesn't work due to some build issue
             "nav"       "1" // Generate nav mesh data
         }
@@ -292,10 +292,10 @@
         BakedLighting
         {
             Version 4
-            ImportanceVolumeTransitionRegion 512            // distance we transition from high to low resolution charts 
+            ImportanceVolumeTransitionRegion 256            // distance we transition from high to low resolution charts 
             LightmapChannels
             {
-                direct_light_shadows 1
+                direct_light_shadows 0
                 debug_chart_color 1
                 directional_irradiance_sh2_dc 1
                 
@@ -314,7 +314,7 @@
                     CompressedFormat DXT1
                 }
             }
-            LightmapGutterSize 2 // For bicubic filtering
+            LightmapGutterSize 0 // For bicubic filtering
             UseStaticLightProbes 0
             LPVAtlas 1
             BC6HHueShiftFixup 0 // Causes more artifacts than it solves atm
@@ -383,8 +383,8 @@
     WorldRenderer
     {
         EnvironmentMaps                 1
-        EnvironmentMapFaceSize          256
-        EnvironmentMapRenderSize        1024
+        EnvironmentMapFaceSize          128
+        EnvironmentMapRenderSize        512
         EnvironmentMapFormat            BC6H
         EnvironmentMapPreviewFormat         BC6H
         EnvironmentMapColorSpace        linear
@@ -403,7 +403,7 @@
         FogCachedShadowAtlasWidth 0
         FogCachedShadowAtlasHeight 0
         FogCachedShadowTileSize 0
-        GpuLightBinnerSunLightFastPath 1
+        GpuLightBinnerSunLightFastPath 0
         CSMCascadeResolution 0
         SunLightManagerCount 0
         SunLightManagerCountTools 0
@@ -413,7 +413,7 @@
 
         TransformTextureRowCount    1024
         TransformTextureRowCountToolsMode 6144
-        SunLightMaxCascadeSize        4
+        SunLightMaxCascadeSize        0
         SunLightShadowRenderMode    Depth
         LayerBatchThresholdFullsort 20
         NonTexturedGradientFog        0
@@ -508,6 +508,7 @@ r_aspectratio                             	"2.15"          // 1.75=80fov | 2.15=
 citadel_camera_hero_fov                     "100"           // The field of view angle of the camera when following a hero.     [def: "90"]
 
 // --- 3. Crosshair/Hud ---
+citadel_unit_status_use_new					"0"
 citadel_hideout_ball_show_juggle_count      "1"             // Shows a fun juggle count minigame for hideout ball.              [def: "0"]
 citadel_hideout_ball_show_juggle_fx         "1"             // Shows juggle visual FX for hideout ball minigame.                [def: "0"]
 citadel_crosshair_hit_marker_duration       "0.0001"        // Removes the hitmarker when shooting people.                  [def: "0.1"]
@@ -515,18 +516,19 @@ citadel_crosshair_hit_marker_duration       "0.0001"        // Removes the hitma
 // --- 4. Lighting & Shadows ---
 lb_enable_stationary_lights                 "0"             // *Disables stationary lights (map looks flatter but more performant).         [def: "1"]
 lb_enable_dynamic_lights                    "0"             // *Disables dynamic lights eg. walker, shop, tp, character abilities etc. (hero silhouettes go dark in menus as a side effect) [def: "1"]
-lb_enable_baked_shadows                     "1"             // *Disables baked shadows (game looks bright if this is on while stationary lights = 1). [def: "1"]
+lb_enable_baked_shadows                     "0"             // *Disables baked shadows (game looks bright if this is on while stationary lights = 1). [def: "1"]
+sc_disable_baked_lighting					"true"
 r_shadows                                   "0"             // Disables dynamic shadows.                                        [def: "1"]
 r_citadel_shadow_quality                    "0"             // Deadlock/Citadel shadow quality level (0 = lowest).              [def: "2"]
 r_citadel_gpu_culling_shadows               "1"             // Enables GPU-driven culling for shadow casters (performance).     [def: "0"]
 csm_max_shadow_dist_override                "0"             // Overrides max distance for cascaded shadow maps (-1 = use default behavior/no override). [def: "1024"]
-r_size_cull_threshold_shadow                "1"             // Threshold of shadow map size percentage below which objects get culled (higher = cull more to save shadow cost). [def: "0.2"]
-lb_barnlight_shadowmap_scale                "0.5"           // Scale for computed barnlight shadowmap size (lower = cheaper).   [def: "1"]
-lb_csm_cascade_size_override                "1"             // Enables overriding CSM cascade sizing rules (forces engine to use override values). [def: "1536"]
+r_size_cull_threshold_shadow                "200"             // Threshold of shadow map size percentage below which objects get culled (higher = cull more to save shadow cost). [def: "0.2"]
+lb_barnlight_shadowmap_scale                "0.1"           // Scale for computed barnlight shadowmap size (lower = cheaper).   [def: "1"]
+lb_csm_cascade_size_override                "0.25"             // Enables overriding CSM cascade sizing rules (forces engine to use override values). [def: "1536"]
 lb_csm_override_staticgeo_cascades          "0"             // Disables realistic static cascades/ shadows from being cast around dynamic shadows such as heroes, uses low quality baked shadows instead. [def: "1"]
-lb_csm_override_staticgeo_cascades_value    "-1"            // Base range of static cascade affects around player shadows. (-1 = minimal/disabled override behavior). [def: "-1"]
+lb_csm_override_staticgeo_cascades_value    "0"            // Base range of static cascade affects around player shadows. (-1 = minimal/disabled override behavior). [def: "-1"]
 lb_sun_csm_size_cull_threshold_texels       "30"            // Culls tiny CSM contributions below a texel threshold (performance). [def: "10"]
-lb_dynamic_shadow_resolution_base           "256"           // Base resolution for dynamic shadows (lower = cheaper).           [def: "1536"]
+lb_dynamic_shadow_resolution_base           "32"           // Base resolution for dynamic shadows (lower = cheaper).           [def: "1536"]
 sc_disable_spotlight_shadows                "1"             // Disables spotlight shadows.                                      [def: "0"]
 sc_disable_shadow_materials					"1" 			// Prevents expensive shadow materials from rendering.
 sparseshadowtree_enable_rendering           "0"             // Enables Sparse Shadow Tree, rendering static geometry into shadow cascades. [def: "0"]
@@ -543,7 +545,7 @@ cl_retire_low_priority_lights               "1"             // Replaces/drops lo
 r_multiscattering                           "1"             // Enables multi-scattering lighting approximation.                 [def: "1"]
 r_light_flickering_enabled                  "0"             // Enables light flicker effects where used.                        [def: "1"]
 r_lightmap_size                             "4"             // Maximum lightmap resolution..                                    [def: "65536"]
-r_lightmap_size_directional_irradiance      "4"             // Sets directional irradiance lightmap data size (lower = less detail) (-1 = uses value of r_lightmap_size ). [def: "-1"]
+r_lightmap_size_directional_irradiance      "0"             // Sets directional irradiance lightmap data size (lower = less detail) (-1 = uses value of r_lightmap_size ). [def: "-1"]
 r_lightmap_bicubic_filtering                "1"             // Enables bicubic filtering on lightmaps.                          [def: "1"]
 r_ssao                                      "0"             // Disables screen-space ambient occlusion.                         [def: "1"]
 r_ssao_strength                             "0"             // AO strength multiplier (0 = no AO contribution).                 [def: "1.2"]
@@ -553,6 +555,7 @@ mat_set_shader_quality                      "0"             // Force shader qual
 r_distancefield_enable                      "0"             // Disables/ Enables distance-field system (used by some lighting/shadowing/occlusion features). [def: "1"]
 r_citadel_distancefield_farfield_enable     "0"             // Disables long-range distance field effects.                      [def: "1"]
 r_citadel_disable_npr_lighting 				"false"
+csm_viewmodel_shadows						"false"
 
 // --- 5. Skybox Rendering ---
 r_draw3dskybox                              "0"             //  Enables drawing the 3D skybox layer (distant geometry).         [def: "1"]
@@ -562,7 +565,7 @@ fps_max                                     "0"             // Max FPS while in 
 engine_low_latency_sleep_after_client_tick  "true"          // Sleeps strategically after client tick to reduce latency/stutter (low-latency pacing). [def: "false"]
 
 // --- 7. Object Culling ---
-r_size_cull_threshold                       "0.7"           // *Culls small objects sooner based on screen size threshold (higher = more culling). [def: "0.8"]
+r_size_cull_threshold                       "1.0"           // *Culls small objects sooner based on screen size threshold (higher = more culling). [def: "0.8"]
 
 // --- 8. Camera Tweaks ---
 r_citadel_clip_sphere_min_opacity           "0"             // Removes the blur from the pinhole camera                         [def: "40"]
@@ -583,75 +586,133 @@ ragdoll_parallel_pose_control               "1"             // Multithreaded rag
 // ================ MODELS ================
 enable_boneflex                             "0"             // Disables bone flexes (procedural facial/mesh flex drivers).      [def: "1"]
 r_hair_ao                                   "0"             // Disables hair ambient occlusion/shading pass.                    [def: "1"]
-cl_fasttempentcollision                     "1"             // Limits/controls fast collision processing for temporary entities (impacts/tracers/etc.); higher usually = more work. [def: "5"]
+cl_fasttempentcollision                     "999999"             // Limits/controls fast collision processing for temporary entities (impacts/tracers/etc.); higher usually = more work. [def: "5"]
 ik_final_fixup_enable                       "0"             // Disables final IK fixup pass (cheaper animations, potentially less accurate). [def: "1"]
 ik_fabrik_align_chain                       "0"             // Disables FABRIK chain alignment in IK (cheaper).                 [def: "1"]
 animgraph_enable_parallel_preupdate         "1"             // Allows animgraph pre-update work to run in parallel (performance). [def: "0"]
 animgraph_enable_parallel_op_evaluation     "1"             // Allows animgraph operator evaluation to run in parallel (performance). [def: "0"]
 cloth_sim_on_tick                           "0"             // Update the cloth simulation every tick                           [def: "1"]
 phys_threaded_cloth_bone_update             "1"             // Make the cloth update threaded                                   [def: "0"]
-props_break_max_pieces_perframe             "1"             // Makes boxes break into a single pieces                           [def: "16"]
+props_break_max_pieces_perframe             "0.5"             // Makes boxes break into a single pieces                           [def: "16"]
+cloth_update								"1"
+r_render_hair								"0"
 
 // ================ VISUAL CLARITY ================
 mat_colorcorrection                         "1"             // Disables/ Enables color correction (game looks less vibrant when off). [def: "1"]
 r_texture_budget_dynamic 					"true"
-r_drawdecals                                "1"             // *Render decals.                                              	[def: "1"]
+r_drawdecals                                "0"             // *Render decals.                                              	[def: "1"]
 r_decals                                    "1"             // Maximum number of decals allowed. (lower = fewer bullet holes/blood/impact marks). [def: "2048"]
-r_character_decal_resolution                "1"             // Resolution of character decal texture.                           [def: "1024"]
+r_character_decal_resolution                "0.01"             // Resolution of character decal texture.                           [def: "1024"]
 r_depth_of_field                            "0"             // Disables depth of field.                                         [def: "1"]
 r_effects_bloom                             "0"             // Disables effects bloom.                                          [def: "1"]
 r_post_bloom                                "0"             // Disables post-process bloom.                                     [def: "1"]
 cl_show_splashes                            "0"             // Disables splash effects (water/impact splashes).                 [def: "1"]
-sc_clutter_enable                           "false"         // Disables clutter props, improves visibility & FPS.               [def: "true"]
+sc_clutter_enable                           "0"             // Disables clutter props, improves visibility & FPS.               [def: "true"]
 volume_fog_intermediate_textures_hdr        "false"
 r_drawtracers 								"1"
-r_drawtracers_firstperson 					"1"
+r_drawtracers_firstperson 					"0"
+violence_ablood 							"0"             // Disables alien/other blood effects. [def: "1"]
+violence_agibs 								"0"             // Disables alien/other gibs. [def: "1"]
+r_fallback_texture_lod_scale				"4"
+r_texture_pool_size							"256"
+r_texture_stream_max_resolution				"128"
+fog_enableskybox							"0"
+r_citadel_depthoffield_enable				"false"
+r_citadel_distancefield_blur				"false"
+r_texture_budget_threshold					"0.7"
+r_texture_lod_scale							"4"
 
 // ================ INPUT ================
 cl_input_enable_raw_keyboard                "1"             // Enables raw keyboard input handling (more direct input path).[def: "0"]
+m_rawinput									"1"
 
 // ================ PARTICLES ================
 cl_particle_max_count                       "0"             // If console is flooded with max particles exceeded warnings.      [def: "0"]
 r_drawparticles								"false"
-r_particle_max_size_cull                    "200"           // Particle systems larger than this in every dimension skip culling to save CPU.  They will be drawn anyway [def: "1200"]
-r_particle_max_detail_level                 "1"             // The maximum detail level of particle to create.                  [def: "3"]
+r_particle_max_size_cull                    "1600"           // Particle systems larger than this in every dimension skip culling to save CPU.  They will be drawn anyway [def: "1200"]
+r_particle_max_detail_level                 "0"             // The maximum detail level of particle to create.                  [def: "3"]
 particle_cluster_nodraw                     "1"             // Skips drawing particle “clusters”/grouped particle batches (performance, fewer small effects). [def: "0"]
 r_physics_particle_op_spawn_scale           "0"             // Prevents physics-based particle spawns.                          [def: "1"]
 r_RainParticleDensity                       "0"             // Density of Particle Rain 0-1.                                    [def: "1"]                          
 cl_particle_fallback_base                   "10"            // Base for falling back to cheaper effects under load.             [def: "0"] 
-cl_particle_fallback_multiplier             "20"            // Multiplier for falling back to cheaper effects under load.       [def: "0"]
+cl_particle_fallback_multiplier             "10"            // Multiplier for falling back to cheaper effects under load.       [def: "0"]
 cl_particle_sim_fallback_base_multiplier    "40"            // How aggressive the switch to fallbacks will be depending on how far over the cl_particle_sim_fallback_threshold_ms the sim time is.  Higher numbers are more aggressive. [def: "5"] 
-cl_particle_sim_fallback_threshold_ms       "0.001"         // Amount of simulation time that can elapse before new systems start falling back to cheaper versions [def: "6"] 
-r_particle_skip_postsim                     "true"          // Not entirely sure what it does, going off of the name I'd imagine it skips the post simulation, this is a testvar [def: "false"]
+cl_particle_sim_fallback_threshold_ms       "0"             // Amount of simulation time that can elapse before new systems start falling back to cheaper versions [def: "6"] 
+r_particle_skip_postsim                     "1"          // Not entirely sure what it does, going off of the name I'd imagine it skips the post simulation, this is a testvar [def: "false"]
 r_particle_timescale                        "1.1"           // Speeds up particle simulation, thus making them end sooner, however this causes visual desyncs, most notably with big effects that last a while such as infernus ult. Please tweak this to what you are comfortable with. [def: "1"]
-cl_particle_batch_mode                      "1"             // Has a range of 1 or 2, 2 will make celeste's auto rebound look weird and 0 will make them not batch [def: "1"]
+cl_particle_batch_mode                      "2"             // Has a range of 1 or 2, 2 will make celeste's auto rebound look weird and 0 will make them not batch [def: "1"]
 r_draw_particle_children_with_parents       "0"             
 r_particle_max_texture_layers               "4"             // Anything below 4 will make infernus afterburn, paige fire, and drifter's passive look very weird and blocky [def: "-1"]
 r_particle_cables_cast_shadows				"false"
 r_particle_cables_culling					"1"
 r_particle_cables_render					"false"
-
+cl_aggregate_particles						"1"
+func_break_max_pieces						"1"
+r_particle_cables_render_meshlets			"0"
+r_particle_batch_collections				"true"
+r_particle_model_new8						"0"
+r_particle_mixed_resolution_viewstart		"800"
+r_particle_max_draw_distance				"300000"
+r_limit_particle_job_duration				"1"
+r_particle_min_timestep						"0.001"
+cl_impacteffects 							"0"
+fx_drawmetalspark							"false"
 
 // ================ Lod & Culling ================
 cl_enable_eye_occlusion                     "true"          // Enables lowering of quality of anything out of sight 			[def: "true"]
 skeleton_instance_lod_optimization          "1"         
-sc_instanced_mesh_lod_bias                  "0.15"          // Bias for LOD selection of instanced mesh                         [def: "1.25"]
+sc_instanced_mesh_lod_bias                  "15"          // Bias for LOD selection of instanced mesh                         [def: "1.25"]
 sc_instanced_mesh_lod_bias_shadow           "0.10"          // Bias for LOD selection of instanced meshes in shadowmaps         [def: "1.75"]
 sc_instanced_mesh_motion_vectors            "0"             // Set 1 if you use motion blur                                     [def: "1"]
 sc_instanced_mesh_size_cull_bias_shadow     "10"            // Bias for size culling instanced meshes in shadowmaps             [def: "2"]
 sc_fade_distance_scale_override             "100"           // Distance objects fade in and out                                 [def: "-1"]
-sc_clutter_enable                           "0"         // No debris/props 1=Props visible                                  [def: "true"]
+sc_clutter_enable                           "0"             // No debris/props 1=Props visible                                  [def: "true"]
 sc_aggregate_bvh_threshold                  "16"            // Lower BVH threshold                                              [def: "128"]
 sc_layer_batch_threshold                    "16"            // Lower batch threshold                                            [default: "128"]
 sc_layer_batch_threshold_fullsort           "20"            //                                                                  [def: "80"]
 sv_remove_ent_from_pvs                      "1"             // Culls objects (creeps, boxes, objects) outside of view           [def: "0"]
-r_farz                                      "18000"          // Override the far clipping plane                                  [def: "-1"]
+r_farz                                      "14000"          // Override the far clipping plane                                  [def: "-1"]
 r_mapextents                                "10000"
 citadel_use_pvs_for_players                 "true"          // Default culls players when out of view                           [def: "false"]
 sv_waterdist								"0"
+lb_ssss_samples								"0"
+r_aoproxy_cull_dist							"0.01"
+r_aoproxy_min_dist							"9999"
+r_character_decal_monitor_render_res		"128"
+r_haircull_percent							"100"
 
 // ================ Misc ================
 r_low_latency                               "1"             // Depends on if your hardware supports it I believe                [def: "1"]
+think_limit									"10"
+zipline_use_new_latch						"0"
+animgraph_enable_parallel_preupdate 		"1"             // Allows animgraph pre-update work to run in parallel (performance). [def: "0"] 
+animgraph_enable_parallel_op_evaluation 	"1"             // Allows animgraph operator evaluation to run in parallel (performance). [def: "0"]
+r_citadel_distancefield_farfield_enable 	"0"             // Disables long-range distance field effects. [def: "1"]
+cl_bone_cache_optimization					"1"
+cl_interp_parallel							"1"
+cl_batch_entity_list_ops_during_latch		"1"
+sc_dithered_lod_transition_amt				"0"
+dsp_slow_cpu								"1"
+cl_phys_sleep_enable						"1"
+r_enable_rigid_animation					"0"
+cl_phys_enabled								"false"
+csm_cascade0_override_dist					"0"
+csm_cascade1_override_dist 					"0"
+csm_cascade2_override_dist 					"0"
+csm_cascade3_override_dist 					"0"
+csm_max_dist_between_caster_and_receiver 	"0"
+csm_max_num_cascades_override				"0"
+csm_max_visible_dist						"0"
+csm_res_override_0 							"1"
+csm_res_override_1 							"1"
+csm_res_override_2 							"1"
+csm_res_override_3 							"1"
+anim_disable								"true"
+cl_simulate_dormant_entities				"0"
+phys_expensive_shape_threshold				"100"
+props_break_apply_radial_forces				"0"
+sc_force_materials_batchable				"true"
+sc_allow_dithered_lod						"false"
 
 // ================ Grass ================
 r_grass_quality                             "0"             // Quality of the grass                                             [def: "2"]
@@ -665,6 +726,7 @@ r_texture_budget_update_period				"0.5"
 r_particle_parallel_simulation				"1"
 r_particle_batch_simulate					"1"
 threadpool_thread_limit						"0"
+r_world_wind_strength						"0"
 
 
          //CREDITS																				        \\
