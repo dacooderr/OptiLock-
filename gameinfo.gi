@@ -580,8 +580,9 @@ panorama_use_new_occlusion_invalidation     "1"
 panorama_temp_comp_layer_min_dimension      "128"
 
 // ================ RAGDOLLS ================
-cl_ragdoll_limit 							"1"				// Limits number of ragdolls active at once.
+cl_ragdoll_limit 							"0"				// Limits number of ragdolls active at once.
 ragdoll_parallel_pose_control               "1"             // Multithreaded ragdoll handling, better performance (if ragdolls aren't disabled). [def: "0"]
+cl_disable_ragdolls                         "1"             // Keep set to 0 - enabling this (disabling ragdolls) can cause issue with doorman's ultimate. [def: "0"]
 
 // ================ MODELS ================
 enable_boneflex                             "0"             // Disables bone flexes (procedural facial/mesh flex drivers).      [def: "1"]
@@ -671,7 +672,7 @@ sc_aggregate_bvh_threshold                  "16"            // Lower BVH thresho
 sc_layer_batch_threshold                    "16"            // Lower batch threshold                                            [default: "128"]
 sc_layer_batch_threshold_fullsort           "20"            //                                                                  [def: "80"]
 sv_remove_ent_from_pvs                      "1"             // Culls objects (creeps, boxes, objects) outside of view           [def: "0"]
-r_farz                                      "12000"          // Override the far clipping plane                                  [def: "-1"]
+r_farz                                      "14000"          // Override the far clipping plane                                  [def: "-1"]
 r_mapextents                                "10000"
 citadel_use_pvs_for_players                 "true"          // Default culls players when out of view                           [def: "false"]
 sv_waterdist								"0"
